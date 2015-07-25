@@ -49,7 +49,7 @@
       <ul class="right hide-on-med-and-down"> 
         <?php if(isset($_SESSION["id"])){ ?>
           <li><a href="">Search Books</a></li>
-          <li><a href="">View Courseware</a></li>
+          <li><a href="viewcourseware.php">View Courseware</a></li>
           <li><a href="logout.php">Logout</a></li>
         <?php } else { ?>
           <li><a href="login.php">Login</a></li>
@@ -60,7 +60,7 @@
         <ul id="nav-mobile" class="side-nav">
           <?php if(isset($_SESSION["id"])){ ?>
           <li><a href="">Search Books</a></li>
-          <li><a href="">View Courseware</a></li>
+          <li><a href="viewcourseware.php">View Courseware</a></li>
           <li><a href="logout.php">Logout</a></li>
           <?php } else { ?>
           <li><a href="login.php">Login</a></li>

@@ -27,3 +27,54 @@ function login(){
  },{scope: 'email'});
 }
 
+function populatesubjects(){
+  var idsub = $('#stream')[0].value;
+  var sem = $('#sem')[0].value;
+  $.ajax({
+    method: "POST",
+    url: "getsubjects.php",
+    data: {subjectid: idsub,semester: sem},
+    success: function(data){
+      var select = document.getElementById("subject");
+      var options = JSON.parse(data);
+      // Clearing select
+      for (i = 1; i < select.options.length; i++) {
+        select.options[i] = null;
+      }
+      for (var i = 0; i < options.length; i++) {
+        console.log("in loop");
+        var opt = options[i];
+        var el = document.createElement("option");
+        el.textContent = opt["subjectname"];
+        el.value = opt["subjectid"];
+        select.appendChild(el);
+      }
+    }
+  });
+}
+
+function populatebooks(){
+  var idsub = $('#subject')[0].value;
+
+  $.ajax({
+    method: "POST",
+    url: "getbooks.php",
+    data: {subjectid: idsub},
+    success: function(data){
+      var select = document.getElementById("book");
+      var options = JSON.parse(data);
+      // Clearing select
+      for (i = 1; i < select.options.length; i++) {
+        select.options[i] = null;
+      }
+      for (var i = 0; i < options.length; i++) {
+        console.log("in loop");
+        var opt = options[i];
+        var el = document.createElement("option");
+        el.textContent = opt["bookname"];
+        el.value = opt["bookid"];
+        select.appendChild(el);
+      }
+    }
+  });
+}

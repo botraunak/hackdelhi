@@ -184,4 +184,20 @@
             return true;
     
     }
+
+    //function to get subjects
+    function getsubjects($sem,$stream){
+        $result = query("SELECT * FROM courseware WHERE streamid = ? AND sem = ?",$stream,$sem);
+        return $result;
+    }
+
+    function getbooks($subjectid){
+        $result = query("SELECT * FROM books WHERE subjectid = ? ",$subjectid);
+        return $result;
+    }
+
+    function addbook($bookid,$price){
+        $result = query("INSERT INTO sellers(bookid,price,userid) VALUES(?,?,?)",$bookid,$price,$_SESSION["user"]["id"]);
+        return $result;
+    }
 ?>
