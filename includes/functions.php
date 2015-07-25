@@ -10,6 +10,20 @@
 
     require_once("constants.php");
 
+/**
+     * Apologizes to user with message.
+     */
+    function apologize($message)
+    {
+       // require("../templates/header.php");
+
+        render("apology.php", ["message" => $message]);
+        
+        //require("../templates/footer.php");
+        exit;
+    }
+
+
     function logout()
     {
         // unset any session variables

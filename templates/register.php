@@ -11,37 +11,31 @@
                 <form action="register.php" method="POST" class="col s12">
                   <div class="row">
                     <div class="input-field col s12">
-                      <input id="icon_prefix" type="email" class="validate">
+                      <input name="name" id="icon_prefix" type="text" class="validate">
                       <label for="icon_prefix">Name</label>
                     </div>   
                     <div class="input-field col s12">
-                      <input id="icon_prefix" type="email" class="validate">
+                      <input name="email" id="icon_prefix" type="email" class="validate">
                       <label for="icon_prefix">Email</label>
                     </div>
                     <div class="input-field col s12">
-                      <input id="icon_telephone" type="password" class="validate">
+                      <input name="password" id="icon_telephone" type="password" class="validate">
                       <label for="icon_telephone">Password</label>
                     </div>
-                    <div class="input-field col s12">
-                    <select>
-                      <option value="" disabled selected>Choose your option</option>
-                      <option value="1">Option 1</option>
-                      <option value="2">Option 2</option>
-                      <option value="3">Option 3</option>
-                    </select>
-                    <label>College</label>
-                  </div>
-                
+                    
                   </div>
                   <button class="btn btn-info">Sign up</button>
 
                   </form>
               </div>
             </div>
+            <!-- 
             <div class="card-action">
-              <button class="btn blue">Sign up with Facebook</button>
+              <button onclick="login()"class="btn blue">Sign up with Facebook</button>
               <button class="btn green" onclick="location.href='login.php'">Sign in</button>
             </div>
+
+             -->
           </div>
         </div>
       </div>

@@ -14,6 +14,7 @@
   	<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
 	<!-- Compiled and minified JavaScript -->
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.0/js/materialize.min.js"></script>
+  <script src="js/app.js"></script>
 
 </head>
 
@@ -21,17 +22,38 @@
 
 <body>
 
+<!--
+  <script>
+      window.fbAsyncInit = function() {
+        FB.init({
+          appId      : '839288846167954',
+          xfbml      : true,
+          version    : 'v2.3'
+        });
+      };
+
+      (function(d, s, id){
+         var js, fjs = d.getElementsByTagName(s)[0];
+         if (d.getElementById(id)) {return;}
+         js = d.createElement(s); js.id = id;
+         js.src = "http://connect.facebook.net/en_US/sdk.js";
+         fjs.parentNode.insertBefore(js, fjs);
+       }(document, 'script', 'facebook-jssdk'));
+  </script>
+
+-->
+
   <nav class="teal" role="navigation">
     <div class="nav-wrapper container">
-      <a id="logo-container" href="#" class="brand-logo">HackdelhiBooks</a>
+      <a id="logo-container" href="index.php" class="brand-logo">HackdelhiBooks</a>
       <ul class="right hide-on-med-and-down">
-        <li><a href="#">Login</a></li>
-        <li><a href="#">Signup</a></li>
+        <li><a href="login.php">Login</a></li>
+        <li><a href="register.php">Signup</a></li>
       </ul>
 
       <ul id="nav-mobile" class="side-nav">
-         <li><a href="#">Login</a></li>
-        <li><a href="#">Signup</a></li>
+         <li><a href="login.php">Login</a></li>
+        <li><a href="register.php">Signup</a></li>
       </ul>
       <a href="#" data-activates="nav-mobile" class="button-collapse"><i class="material-icons">menu</i></a>
     </div>
