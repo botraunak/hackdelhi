@@ -126,7 +126,7 @@
 
             // render header
             require("../templates/header.php");
-            require("../templates/navbar.php");
+            //require("../templates/navbar.php");
             // render template
             require("../templates/$template");
 

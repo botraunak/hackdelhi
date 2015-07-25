@@ -1,7 +1,7 @@
  <?php
 
  	// your database's name
-    define("DATABASE", "hackdelhibook");
+    define("DATABASE", "hackdelhi");
  
     // your database's password
     define("PASSWORD", "raunak254");

@@ -1,3 +1,4 @@
 <?php 
-	echo "Hello world";
+	require("../includes/config.php");
+	
  ?>
