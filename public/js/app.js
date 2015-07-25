@@ -103,3 +103,15 @@ function removenotif(notifid){
     }
   });
 }
+
+function removenotif2(notifid){
+  $.ajax({
+    method: "POST",
+    url: "removenotif2.php",
+    data: {notifid: notifid},
+    success: function(data){
+      console.log(data);
+      location.href = "/index.php";
+    }
+  });
+}
