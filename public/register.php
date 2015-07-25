@@ -14,7 +14,10 @@ if($_SERVER["REQUEST_METHOD"]=="POST"){
 	{
 		$rows = query("SELECT LAST_INSERT_ID() AS id");
 		$id = $rows[0]["id"];
+		$rows = query("SELECT * FROM users WHERE id = ?",$id);
+		$rows = $rows[0];
 		$_SESSION["id"] = $id;
+		$_SESSION["user"]= $rows;
 		redirect("/");
 	}
 }

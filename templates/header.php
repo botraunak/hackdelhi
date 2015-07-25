@@ -46,16 +46,28 @@
   <nav class="teal" role="navigation">
     <div class="nav-wrapper container">
       <a id="logo-container" href="index.php" class="brand-logo">HackdelhiBooks</a>
-      <ul class="right hide-on-med-and-down">
-        <li><a href="login.php">Login</a></li>
-        <li><a href="register.php">Signup</a></li>
-      </ul>
+      <ul class="right hide-on-med-and-down"> 
+        <?php if(isset($_SESSION["id"])){ ?>
+          <li><a href="">Search Books</a></li>
+          <li><a href="">View Courseware</a></li>
+          <li><a href="logout.php">Logout</a></li>
+        <?php } else { ?>
+          <li><a href="login.php">Login</a></li>
+          <li><a href="register.php">Signup</a></li>  
+          <?php } ?>
+        </ul>
 
-      <ul id="nav-mobile" class="side-nav">
-         <li><a href="login.php">Login</a></li>
-        <li><a href="register.php">Signup</a></li>
-      </ul>
-      <a href="#" data-activates="nav-mobile" class="button-collapse"><i class="material-icons">menu</i></a>
+        <ul id="nav-mobile" class="side-nav">
+          <?php if(isset($_SESSION["id"])){ ?>
+          <li><a href="">Search Books</a></li>
+          <li><a href="">View Courseware</a></li>
+          <li><a href="logout.php">Logout</a></li>
+          <?php } else { ?>
+          <li><a href="login.php">Login</a></li>
+          <li><a href="register.php">Signup</a></li>  
+          <?php } ?>
+        </ul>
+     <a href="#" data-activates="nav-mobile" class="button-collapse"><i class="material-icons">menu</i></a>
     </div>
   </nav>
 	

@@ -14,6 +14,10 @@ if($_SERVER["REQUEST_METHOD"]=="POST"){
 			if($result[0]["password"] == $password){
 			$id = $result[0]["id"];
 			$_SESSION["id"] = $id;
+
+			$rows = query("SELECT * FROM users WHERE id = ?",$id);
+			$rows = $rows[0];
+			$_SESSION["user"]= $rows;
 			redirect("/");
 		}
 	}

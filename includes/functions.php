@@ -155,4 +155,33 @@
         }
     }
 
+    // Function to get Colleges
+    function getcolleges(){
+        $result = query("SELECT * FROM colleges");
+        return $result;
+    }
+    
+    //function to update college
+    function updatecollege($id){
+        $result = query("UPDATE users SET college = $id WHERE id = ?",$_SESSION["user"]["id"]);
+        if($result == false)
+            return false;
+        else
+            return true;
+    }
+
+    //function to get stream data 
+    function getstreamdata(){
+        $result = query("SELECT * FROM streams WHERE collegeid = ? ",$_SESSION["user"]["college"]);
+        return $result;
+    }
+    // function to update stream
+    function updatestream($streamid,$sem){
+          $result = query("UPDATE users SET stream = $streamid, sem = $sem WHERE id = ?",$_SESSION["user"]["id"]);
+        if($result == false)
+            return false;
+        else
+            return true;
+    
+    }
 ?>
