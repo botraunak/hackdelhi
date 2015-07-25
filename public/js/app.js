@@ -78,3 +78,28 @@ function populatebooks(){
     }
   });
 }
+
+function send_notification(userid,bookid){
+  $.ajax({
+    method: "POST",
+    url: "sendnotif.php",
+    data: {userid: userid,bookid: bookid},
+    success: function(data){
+      console.log(data);
+      location.href = "/index.php";
+    }
+  });
+}
+
+
+function removenotif(notifid){
+  $.ajax({
+    method: "POST",
+    url: "removenotif.php",
+    data: {notifid: notifid},
+    success: function(data){
+      console.log(data);
+      location.href = "/index.php";
+    }
+  });
+}

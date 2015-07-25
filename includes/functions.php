@@ -200,4 +200,40 @@
         $result = query("INSERT INTO sellers(bookid,price,userid) VALUES(?,?,?)",$bookid,$price,$_SESSION["user"]["id"]);
         return $result;
     }
+
+    // function to get sellers
+    function getsellers($bookid){
+        $result = query("SELECT * FROM sellers WHERE bookid = ?",$bookid);
+        return $result;
+    }
+
+    function getuserdetails($userid){
+        $result = query("SELECT * FROM users WHERE id = ?",$userid);
+        return $result;
+    }
+
+    //function to disable ping
+    function disableping($userid){
+        $result = query("SELECT count(*) as `count` FROM notifications WHERE recieverid = ? AND senderid = ?",$userid,$_SESSION["user"]["id"]);
+        if($result == false){
+            return false;
+        }
+        else{
+            return $result;
+        }
+    }
+
+    //function to get notifaction
+    function getnotif(){
+        $result = query("SELECT * FROM notifications WHERE recieverid = ? ",$_SESSION["user"]["id"]);
+        return $result;
+    }
+
+    //function to get book details
+    function getbookd($bookid){
+        $result = query("SELECT * FROM books WHERE bookid = ? ",$bookid);
+        return $result;
+
+    }
 ?>
+

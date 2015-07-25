@@ -7,7 +7,7 @@
 		render("displaycoursebooks.php");
 	}
 	else{
-		echo "DONE BRO DONE";
+		render("dispsellers.php");
 	}
 	
  ?>
