@@ -1,5 +1,6 @@
-<div class="container">
-	<br><br>
+<div class="container" style="padding-top:150px; padding-bottom:30px">
+	<center><h4>Please select a subject to view your prescribed books:</h4></center>
+	<br>
 	<div class="row">
 		<form action="viewcourseware.php" method="get">
 		<div class="input-field col s6 offset-s3">
@@ -18,9 +19,9 @@
 		</div>
 		</form>
 	</div>
+	<br><br><br><br>
+	<center><h5>
+		HackDelhi Books saves the course structure and the recommended books related to every subject beforehand. So, no need to worry about searching for books, just select the course and you're good to go!
+	</h5></center>
 
-	<br>
-
-	<h4>Please Select A subject to view your prescribed books</h4>
-	<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Doloremque minima eum necessitatibus, vero amet, aut ipsa sunt laudantium eos, odit omnis voluptatibus earum vel cupiditate! Rem id eaque ea temporibus mollitia! Dolor libero ratione adipisci magnam cumque, necessitatibus facilis voluptatem itaque placeat, incidunt commodi eius. Expedita error incidunt, est rem dolore, distinctio, vero laboriosam facilis quae aperiam necessitatibus, porro. Quod numquam, vitae in cumque incidunt obcaecati! Doloremque explicabo vel voluptate earum repellendus suscipit quidem neque repudiandae totam eius laudantium iste error facilis est quo nesciunt atque, ex tempora eum accusamus quam vero, sapiente molestias a. Dolor similique animi quisquam, perspiciatis.</p>
 </div>

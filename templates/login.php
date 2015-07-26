@@ -11,11 +11,11 @@
                 <form action="login.php" method="post" class="col s12">
                   <div class="row">
                     <div class="input-field col s12">
-                      <input name="email" id="icon_prefix" type="email" class="validate">
+                      <input name="email" id="icon_prefix" type="email" class="validate" required>
                       <label for="icon_prefix">Email</label>
                     </div>
                     <div class="input-field col s12">
-                      <input name="password" id="icon_telephone" type="password" class="validate">
+                      <input name="password" id="icon_telephone" type="password" class="validate" required>
                       <label for="icon_telephone">Password</label>
                     </div>
                   </div>

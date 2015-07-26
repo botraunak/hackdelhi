@@ -5,7 +5,8 @@ if($_SERVER["REQUEST_METHOD"]=="POST"){
 	$name = $_POST["name"];
 	$email = $_POST["email"];
 	$password = $_POST["password"];
-	$result = query("INSERT INTO users (name, email,password) VALUES(?, ?, ?)", $name,$email,$password );
+	$contact = $_POST["contact"];
+	$result = query("INSERT INTO users (name, email,password,contact) VALUES(?, ?, ?,?)", $name,$email,$password,$contact );
 	if ($result === false)
 	{
 		apologize("Could not register new user, Email might be already taken");

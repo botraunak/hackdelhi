@@ -235,5 +235,54 @@
         return $result;
 
     }
+
+    //function to get search res
+    function getsearchres($string){
+        $result = query("SELECT * FROM books WHERE bookname LIKE ? ",'%'.$string.'%');
+        return $result;
+    }
+
+    //fucntion to get bitcoin balance
+    function getbitcoinbal(){
+        $data = array("apiKey" => "er5i6BK9nwgNTTY5a6jwanHWWUBvyjPHFd4xWGyJ");                                                                    
+        $data_string = json_encode($data);                                                                                   
+
+        $ch = curl_init('https://api.coinsecureis.cool/v0/auth/coinbalance');                                                                      
+        curl_setopt($ch, CURLOPT_CUSTOMREQUEST, "POST");                                                                     
+        curl_setopt($ch, CURLOPT_POSTFIELDS, $data_string);                                                                  
+        curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);                                                                      
+        curl_setopt($ch, CURLOPT_HTTPHEADER, array(                                                                          
+            'Content-Type: application/json',                                                                                
+            'Content-Length: ' . strlen($data_string))                                                                       
+        );                                                                                                                   
+
+        $result = curl_exec($ch);
+
+        $x = json_decode($result);
+        return $x;
+    }
+
+    function getbitcoinrate(){
+        $ch = curl_init('https://api.coinsecureis.cool/v0/noauth/lowestask');                                                                      
+        curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);                                                                      
+        
+        $result = curl_exec($ch);
+
+        return json_decode($result);
+      }
+
+    function getbitcoinvalue($paisa,$bitcoinrate){
+        return $paisa/$bitcoinrate;
+    }
+
+     function getpaymentdetails($userid,$bookid){
+         $result = query("SELECT * from sellers WHERE userid = ? AND bookid = ?",$userid,$bookid);
+         return $result;
+     }
+
+     function getnotifdetails($notifid){
+        $result = query("SELECT * from notifications WHERE notifid = ?",$notifid);
+        return $result;
+     }
 ?>
 

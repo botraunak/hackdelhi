@@ -7,6 +7,7 @@
 			<h4>Notifications</h4>
 			<ul class="collection">
 				<?php $res = getnotif();
+				  	if($res != false){
 					foreach ($res as $value) {
 
 						$userd = getuserdetails($value["senderid"]);
@@ -18,16 +19,36 @@
 					<i class="material-icons circle">folder</i>
 					<span class="title"><?php echo $userd["name"]; ?></span>
 					<p>wants to buy <?php echo $bookd["bookname"]; ?> <br>
-
+						<button onclick="removenotif2(<?php echo $value["notifid"] ?>)" class="btn" style="cursor:pointer;"><i class="material-icons">send</i><span style="left: 5px;
+top: -3px;
+position: relative;">Accept</span></button>
 					</p>
 					<a onclick="removenotif(<?php echo $value["notifid"] ?>)" class="secondary-content" style="cursor:pointer;"><i class="material-icons">close</i></a>
+
 				</li>
 				
 				<?php		
 					}
+				}
+				else{
+					echo "<li class=\"collection-item avatar\"> <i class=\"material-icons circle red\">report</i><b style=\"font-size:20px\"> Sorry No new Notifications :( </b></li>";
+				}
 				 ?>
 				 
 			</ul>
+			
+			<div class="col s12 m12">
+				<div class="card">
+					<div class="card-content white-text">
+						<span class="card-title black-text">My BitCoin Balance</span>
+						<?php $x = getbitcoinbal(); ?>
+						<h3 class="black-text"><?php echo ($x->result[0]); ?> satoshis</h3>
+						</div>
+						
+					</div>
+				</div>
+			
+
 		</div>
 		<div class="col s12 m6">
 			<h4>Add Books</h4>
@@ -70,7 +91,7 @@
 			 	<br>
 			 	</div>
 			 	<div class="input-field col s12">
-                    	<input name="price" id="last_name" type="number" class="validate" width="100%">
+                    	<input name="price" id="last_name" type="number" class="validate white" width="100%">
                     	<label for="last_name">Price</label>
 
 				<button type="submit" class="btn">Add Book</button>

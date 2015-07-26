@@ -19,7 +19,10 @@ if($_SERVER["REQUEST_METHOD"]=="POST"){
 			$rows = $rows[0];
 			$_SESSION["user"]= $rows;
 			redirect("/");
-		}
+			}
+			else{
+				apologize("email password don't match!");
+			}
 	}
 }else{
 	render("login.php");

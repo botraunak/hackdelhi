@@ -1,6 +1,6 @@
 <div class="container">
   <br>
-  <h3>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Facere, numquam.</h3>
+  <h3>New User? Sign Up!</h3>
 <div class="row">
         <div class="col s12 m12   ">
           <div class="card">
@@ -11,16 +11,20 @@
                 <form action="register.php" method="POST" class="col s12">
                   <div class="row">
                     <div class="input-field col s12">
-                      <input name="name" id="icon_prefix" type="text" class="validate">
+                      <input name="name" id="icon_prefix" type="text" class="validate" required>
                       <label for="icon_prefix">Name</label>
                     </div>   
                     <div class="input-field col s12">
-                      <input name="email" id="icon_prefix" type="email" class="validate">
+                      <input name="email" id="icon_prefix" type="email" class="validate" required>
                       <label for="icon_prefix">Email</label>
                     </div>
                     <div class="input-field col s12">
-                      <input name="password" id="icon_telephone" type="password" class="validate">
+                      <input name="password" id="icon_telephone" type="password" class="validate" required>
                       <label for="icon_telephone">Password</label>
+                    </div>
+                    <div class="input-field col s12">
+                      <input name="contact" id="icon_telephone" type="tel" class="validate" required>
+                      <label for="icon_telephone">Phone</label>
                     </div>
                     
                   </div>
